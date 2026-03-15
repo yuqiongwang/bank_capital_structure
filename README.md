@@ -1,17 +1,22 @@
 Bank Capital Structure Optimization under Basel III
 Bayraktar, Chevalier, Ly Vath, Wang
+
 -------------------------------------------------------------
+
 This code solves the bank's optimal dividend, investment, and
 recapitalization problem under solvency and liquidity constraints,
 formulated as a combined singular and impulse control problem.
+
 -------------------------------------------------------------
 Requirements: MATLAB_R2025b
+
 -------------------------------------------------------------
 Baseline parameters:
 
 r=0.01, mu=0.04, mu_L=0.03, rho=0.12,
 sigma=0.08, sigma_L=0.03, c=0.20, gamma=0.01,
 kappa=0.01, kappa_p=0.02, a1=0.045, a2=0.05, a3=0.30.
+
 -------------------------------------------------------------
 The scripts should be run in the following order:
 
