@@ -1,6 +1,5 @@
 Bank Capital Structure Optimization under Basel III
 Bayraktar, Chevalier, Ly Vath, Wang
-
 -------------------------------------------------------------
 
 This code solves the bank's optimal dividend, investment, and
