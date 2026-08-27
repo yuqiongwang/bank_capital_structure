@@ -13,7 +13,7 @@ Requirements: MATLAB_R2025b
 Baseline parameters:
 
 r=0.02, mu=0.04, mu_L=0.03, rho=0.12,
-sigma=0.08, sigma_L=0.03, c=0.20, gamma=0.01,
+sigma=0.08, sigma_L=0.03, c=0.20, gamma=0.02,
 kappa=0.01, kappa_p=0.02, a1=0.045, a2=0.05, a3=0.30.
 
 -------------------------------------------------------------
@@ -22,13 +22,13 @@ The scripts should be run in the following order:
 1. 00_a1_main_vi_solver.m
 Solves the variational inequality and the HJB (without issuance).
 Plots the value function v(y), the issuance value \Delta_v,
-and the two dimensional value v(x,l). This is Figure 1 in the paper.
+and the two dimensional value v(x,l). We use the same lower boundary 
+data for the HJB case: v^{HJB}(\underline y) = \underline y-1.
 
 2. 00_a2_trajectory_simulation.m
 Save the result from a1 first and load it as vi_solution.mat.
 This script simulates a single trajectory of Y_t for 50 years.
 It gives the plots of accumulative issuance and dividends.
-They correspond to Figure 2 and 3 in the paper.
 
 3. 00_b1_sensitivity_analysis.m
 Evaluates the value and y^* over grids of (a1, a2, a3).
@@ -47,11 +47,10 @@ OBS: the runtime is large.
 
 6. 00_c2_frontier_with_CI.m
 Computes the confidence-adjusted regulatory frontier using Monte
-Carlo survival estimates and 95% confidence intervals.
+Carlo survival estimates (2000 paths) and 95\% confidence intervals.
 
-7. 00_c3_frontier_robustness.m
-Checks robustness of the regulatory-frontier conclusions across
-different horizons T and initial capital ratios y0.
+7. 00_c3_validate_twosided.m
+Independently validate the result and two-sided CI from 00_c2 using 5000 paths.
 
 8. 00_d1_coord_stackelberg_threshold.m
 Computes coordinated and bank-preferred intervention thresholds
